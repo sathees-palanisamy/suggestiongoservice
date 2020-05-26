@@ -1,0 +1,42 @@
+syntax = "proto3";
+
+package suggest;
+
+option go_package = "suggestpb";
+
+message Suggest {
+    string id = 1;
+    string Email = 2;
+    string Detail = 3;
+    string Date = 4;
+}
+
+message CreateSuggestRequest {
+    Suggest suggest = 1;
+}
+
+message CreateSuggestResponse {
+    Suggest suggest = 1; // will have a blog id
+}
+
+message ListSuggestRequest {
+
+}
+
+message ListSuggestResponse {
+    Suggest suggest = 1;
+}
+
+message DeleteSuggestRequest {
+    string suggest_id = 1;
+}
+
+message DeleteSuggestResponse {
+    string suggest_id = 1;
+}
+
+service SuggestService {
+    rpc CreateSuggest (CreateSuggestRequest) returns (CreateSuggestResponse);
+    rpc ListSuggest (ListSuggestRequest) returns (stream ListSuggestResponse);
+    rpc DeleteSuggest (DeleteSuggestRequest) returns (DeleteSuggestResponse);
+ }
