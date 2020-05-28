@@ -54,7 +54,7 @@ func main() {
 	// [START setting_port]
 	port := os.Getenv("PORT")
 	if port == "" {
-		port = "50051"
+		port = "8080"
 		log.Printf("Defaulting to port %s", port)
 	}
 
@@ -67,7 +67,7 @@ func main() {
 
 	opts := []grpc.ServerOption{}
 
-	tls := true
+	tls := false
 	if tls {
 		certFile := "certs/server.crt"
 		keyFile := "certs/server.key"
