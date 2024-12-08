@@ -3,8 +3,8 @@ module suggestiongoservice
 go 1.12
 
 require (
-	github.com/golang/protobuf v1.3.3
+	github.com/golang/protobuf v1.5.3
 	go.mongodb.org/mongo-driver v1.3.3
-	google.golang.org/grpc v1.29.1
+	google.golang.org/grpc v1.56.3
 	gopkg.in/mgo.v2 v2.0.0-20190816093944-a6b53ec6cb22
 )
